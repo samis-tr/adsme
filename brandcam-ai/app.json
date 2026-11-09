@@ -1,0 +1,92 @@
+{
+  "expo": {
+    "name": "BrandCam AI",
+    "slug": "brandcam-ai",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "brandcam",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0A0A0F",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "ai.brandcam.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "BrandCam AI braucht die Kamera für Fotos und Videos deiner Anzeigen.",
+        "NSMicrophoneUsageDescription": "BrandCam AI braucht das Mikrofon für Videoaufnahmen mit Ton.",
+        "NSPhotoLibraryUsageDescription": "Wähle Fotos und Videos aus deiner Mediathek.",
+        "NSPhotoLibraryAddUsageDescription": "Speichere fertige Anzeigen in deiner Mediathek."
+      }
+    },
+    "android": {
+      "package": "ai.brandcam.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0A0F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-dev-client",
+      "expo-localization",
+      "expo-secure-store",
+      "expo-font",
+      "expo-video",
+      "expo-sharing",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Zugriff auf deine Mediathek.",
+          "savePhotosPermission": "Speichere fertige Anzeigen in deiner Mediathek."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Wähle Fotos und Videos aus deiner Mediathek."
+        }
+      ],
+      "expo-image",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 28
+          }
+        }
+      ],
+      [
+        "./plugins/withNativeBuildJobs",
+        {
+          "jobs": 2
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "316c5973-1b88-4712-8bb7-3201ad938d9c"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "AdsMe",
+    "slug": "AdsMe",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "adsme",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#000000",
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "AdsMe يحتاج الكاميرا لتصوير إعلاناتك.",
+        "NSMicrophoneUsageDescription": "AdsMe يحتاج الميكروفون لتسجيل الفيديو.",
+        "NSPhotoLibraryAddUsageDescription": "لحفظ إعلاناتك في المعرض."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#000000",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sharing",
+      "expo-video",
+      "expo-status-bar",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "AdsMe يحتاج الكاميرا لتصوير إعلاناتك.",
+          "microphonePermission": "AdsMe يحتاج الميكروفون لتسجيل الفيديو.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "للوصول إلى معرض الصور.",
+          "savePhotosPermission": "لحفظ إعلاناتك في المعرض."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "لاختيار اللوغو من المعرض."
+        }
+      ]
+    ]
+  }
+}
